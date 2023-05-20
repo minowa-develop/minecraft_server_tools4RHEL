@@ -1,0 +1,1 @@
+backup_path="/home/mcserver/minecraft_servers_backups/"
