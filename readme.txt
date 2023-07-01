@@ -1,26 +1,23 @@
-サーバの開始やバックアップの作成、サーバ作成を簡単にするシェルなどです。
+readme.txt
+サーバ開始やバックアップの作成、サーバ作成を簡単にするシェルなどです
+7zipを使用するためインストールをお願いします。バックアップ時に使用します。
 
-- select_server.txt
-  サーバディレクトリ名を記載してください。
+- common.conf
+  設定する項目が記載されています。初期設定のために必要な項目があるので記載してください
+  JAVA_PATH: Java版のみ使用します、Javaのパスを指定してください
+  USE_SERVER: 使用するサーバ名
+  BACKUP_PATH: バックアップ先のパス
+  BEDROCK_SERVER_URL: BE版のサーバモジュールをダウンロードするURL
+  JAVA_SERVER_URL: Java版のサーバモジュールをダウンロードするURL
+  ※ バージョンアップの際に変更する必要があります。サーバモジュールの最新は下記のURLで適宜変更してください
+  java: https://www.minecraft.net/ja-jp/download/server
+  BE: https://www.minecraft.net/ja-jp/download/server/bedrock
 
 - start_minecraft_server.sh
-  select_server.txtで指定したサーバを開始します
+  USE_SERVERで指定したサーバを開始します、stopで終了した際、バックアップをとります
   実行例) sh server_minecraft_server.sh
 
-- backup_minecraft_server.sh
-  select_server.txtで指定したサーバのバックアップを取ります。
-  バックアップ先はbachup_pash.txtで指定したパスが対象
-  実行例) sh backup_minecraft_server.sh
-
 - minecraft_servers/create_server.sh
-  新しくサーバを作成します。引数に新規のサーバ名を入力してください。
+  新しくサーバを作成します。第1引数に新規のサーバ名を入力してください。
+  第2引数をなにか入力した際はJava版となります。
   実行例) sh create_server.sh new_server
-
-- minecraft_servers/.template/bedrock_server_url.txt
-  新しくサーバを作成する際にダウンロードするminecraft_serverのURLを記載してください。
-  バージョンアップの際に変更する必要があります。下記の公式ページにて適宜確認してください。
-  https://www.minecraft.net/ja-jp/download/server/bedrock
-
-- minecraft_servers/.template/各ファイル
-  新しくサーバを作成する際に上書きをするファイルです。
-  allowlist.json,server.propertiesが使い回せる設定が多いと思うのでdefaultで設定済み。適宜この２つは削除しても良い
