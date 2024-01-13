@@ -28,7 +28,7 @@ if [ -e "server.jar" ]; then
     echo "javaコマンド、またはJAVA_PATHが設定されていません、javaのインストールかcommon.confのJAVA_PATHを設定してください"
     exit 1
   fi
-  nohup ${JAVA_PATH} -Xmx1024M -Xms1024M -jar server.jar nogui &
+  ${JAVA_PATH} -Xmx1024M -Xms1024M -jar server.jar nogui
 else
   LD_LIBRARY_PATH=. ./bedrock_server
 fi
