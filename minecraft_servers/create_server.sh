@@ -19,6 +19,7 @@ cd $regist_server
 # get server module
 if [ $# -eq 2 ]; then
   curl $JAVA_SERVER_URL -OL
+  echo "eula=true" > eula.txt
 else
   DL_FILE="server.zip"
   curl $BEDROCK_SERVER_URL > $DL_FILE
