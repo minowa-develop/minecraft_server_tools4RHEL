@@ -2,6 +2,13 @@
 
 # 設定file取得
 . ./common.conf
+
+# setting arg
+if [ ${#1} -ne 0 ]; then
+  USE_SERVER=${1}
+fi
+echo "use server: ${USE_SERVER}"
+
 TARGET_DIR="./minecraft_servers/${USE_SERVER}"
 
 CURRENT_DATE=`date "+%Y%m%d-%H%M%S"`
