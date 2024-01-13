@@ -1,22 +1,25 @@
-�T�[�o�J�n��o�b�N�A�b�v�̍쐬�A�T�[�o�쐬���ȒP�ɂ���V�F���Ȃǂł�
-7zip���g�p���邽�߃C���X�g�[�������肢���܂��B�o�b�N�A�b�v���Ɏg�p���܂��B
+サーバ開始やバックアップの作成、サーバ作成を簡単にするシェルなどです
+7zipを使用するためインストールをお願いします。バックアップ時に使用します。
 
 - common.conf
-  �ݒ肷�鍀�ڂ��L�ڂ���Ă��܂��B�����ݒ�̂��߂ɕK�v�ȍ��ڂ�����̂ŋL�ڂ��Ă�������
-  JAVA_PATH: Java�ł̂ݎg�p���܂��AJava�̃p�X���w�肵�Ă�������
-  USE_SERVER: �g�p����T�[�o��
-  BACKUP_PATH: �o�b�N�A�b�v��̃p�X
-  BEDROCK_SERVER_URL: BE�ł̃T�[�o���W���[�����_�E�����[�h����URL
-  JAVA_SERVER_URL: Java�ł̃T�[�o���W���[�����_�E�����[�h����URL
-  �� �o�[�W�����A�b�v�̍ۂɕύX����K�v������܂��B�T�[�o���W���[���̍ŐV�͉��L��URL�œK�X�ύX���Ă�������
-  java: https://www.minecraft.net/ja-jp/download/server
-  BE: https://www.minecraft.net/ja-jp/download/server/bedrock
+  設定する項目が記載されています。初期設定のために必要な項目があるので記載してください
+  JAVA_PATH: Java版のみ使用します、Javaのパスを指定してください、空白値の場合はjavaコマンドを使用します
+  USE_SERVER: 使用するサーバ名
+  BACKUP_PATH: バックアップ先のパス
+  ZIP7_HOME: 7zipのパス,記載していればバックアップ時に使用し、記載無しの場合はzipで圧縮する
+  BEDROCK_SERVER_URL: BE版のサーバモジュールをダウンロードするURL(※1)
+  JAVA_SERVER_URL: Java版のサーバモジュールをダウンロードするURL(※1)
+
+  ※1 バージョンアップの際に変更する必要があります。サーバモジュールの最新は下記のURLで適宜変更してください
+    BE: https://www.minecraft.net/ja-jp/download/server/bedrock
+    java: https://www.minecraft.net/ja-jp/download/server
 
 - start_minecraft_server.sh
-  USE_SERVER�Ŏw�肵���T�[�o���J�n���܂��Astop�ŏI�������ہA�o�b�N�A�b�v���Ƃ�܂�
-  ���s��) sh server_minecraft_server.sh
+  USE_SERVERで指定したサーバを開始します、stopで終了した際、バックアップをとります
+  実行例) sh server_minecraft_server.sh
 
 - minecraft_servers/create_server.sh
-  �V�����T�[�o���쐬���܂��B��1�����ɐV�K�̃T�[�o������͂��Ă��������B
-  ��2�������Ȃɂ����͂����ۂ�Java�łƂȂ�܂��B
-  ���s��) sh create_server.sh new_server
+  新しくサーバを作成します。第1引数に新規のサーバ名を入力してください。
+  第2引数をなにか入力した際はJava版となります。
+  bedrock版 実行例) sh create_server.sh new_server
+  java版 実行例) sh create_server.sh new_server tekito-
