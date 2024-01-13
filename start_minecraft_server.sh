@@ -7,6 +7,7 @@ cd "./minecraft_servers/${USE_SERVER}"
 
 # 種別を取得してサーバを開始する
 if [ -e "server.jar" ]; then
+  # java validate
   if [ ${#JAVA_PATH} -eq 0  ];then
     JAVA_PATH="java"
   fi
@@ -21,4 +22,5 @@ else
 fi
 
 # backup
-sh ../../backup.sh "${BACKUP_PATH}" "minecraft_servers/${USE_SERVER}"
+cd ../../
+sh ./backup.sh
