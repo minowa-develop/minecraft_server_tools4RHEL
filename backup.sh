@@ -11,12 +11,12 @@ echo "use server: ${USE_SERVER}"
 
 TARGET_DIR="./minecraft_servers/${USE_SERVER}"
 
-CURRENT_DATE=`date "+%Y%m%d-%H%M%S"`
+CURRENT_DATE=$(date "+%Y%m%d-%H%M%S")
 BACKUPED_NAME="${CURRENT_DATE}_${USE_SERVER}"
 
 # if not exist backupdir
-if [ ! -d ${BACKUP_PATH} ];then
-  mkdir ${BACKUP_PATH}
+if [ ! -d "${BACKUP_PATH}" ];then
+  mkdir "${BACKUP_PATH}"
 fi
 
 # backup

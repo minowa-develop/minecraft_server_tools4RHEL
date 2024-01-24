@@ -15,7 +15,7 @@ if [ ! -d "./minecraft_servers/${USE_SERVER}" ]; then
   exit 1
 fi
 
-cd "./minecraft_servers/${USE_SERVER}"
+cd "./minecraft_servers/${USE_SERVER}" || exit 1
 
 # 種別を取得してサーバを開始する
 if [ -e "server.jar" ]; then
@@ -23,8 +23,7 @@ if [ -e "server.jar" ]; then
   if [ ${#JAVA_PATH} -eq 0  ]; then
     JAVA_PATH="java"
   fi
-  ${JAVA_PATH} --version
-  if [ $? -ne 0  ]; then
+  if ! ${JAVA_PATH} --version; then
     echo "javaコマンド、またはJAVA_PATHが設定されていません、javaのインストールかcommon.confのJAVA_PATHを設定してください"
     exit 1
   fi
