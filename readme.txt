@@ -7,7 +7,7 @@ shellに実行権限を与える必要があります、右記コマンドをこ
   JAVA_PATH: Java版のみ使用します、Javaのパスを指定してください、空白値の場合はjavaコマンドを使用します
   USE_SERVER: 使用するサーバ名
   BACKUP_PATH: バックアップ先のパス
-  ZIP7_HOME: 7zipのパス,記載していればバックアップ時に使用し、記載無しの場合はzipで圧縮する
+  USE_7ZIP: 7zipの使用有無、trueの場合は7zipで圧縮します
   BEDROCK_SERVER_URL: BE版のサーバモジュールをダウンロードするURL(※1)
   JAVA_SERVER_URL: Java版のサーバモジュールをダウンロードするURL(※1)
 

@@ -20,7 +20,7 @@ if [ ! -d "${BACKUP_PATH}" ];then
 fi
 
 # backup
-if [ "${#USE_ZIP7}" = "true" ];then
+if [ "${#USE_7ZIP}" = "true" ];then
   7za a -mx=9 -t7z "${BACKUP_PATH}/${BACKUPED_NAME}.7z" "${TARGET_DIR}"
 else
   zip -9 "${BACKUP_PATH}/${BACKUPED_NAME}.zip" -r "${TARGET_DIR}"
